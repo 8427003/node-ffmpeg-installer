@@ -32,22 +32,22 @@ var ffmpegPath, packageJson;
 
 if (verifyFile(npm3Binary)) {
     ffmpegPath = npm3Binary;
-    packageJson = require(npm3Package);
+    //packageJson = require(npm3Package);
 } else if (verifyFile(npm2Binary)) {
     ffmpegPath = npm2Binary;
-    packageJson = require(npm2Package);
+    //packageJson = require(npm2Package);
 } else if (verifyFile(topLevelBinary)) {
     ffmpegPath = topLevelBinary;
-    packageJson = require(topLevelPackage);
+   // packageJson = require(topLevelPackage);
 } else {
     throw 'Could not find ffmpeg executable, tried "' + npm3Binary + '", "' + npm2Binary + '" and "' + topLevelBinary + '"';
 }
 
-var version = packageJson.ffmpeg || packageJson.version;
-var url = packageJson.homepage;
+// var version = packageJson.ffmpeg || packageJson.version;
+// var url = packageJson.homepage;
 
 module.exports = {
     path: ffmpegPath,
-    version: version,
-    url: url
+//     version: version,
+//     url: url
 };
